@@ -8,7 +8,7 @@ for M in fid; do
     echo "Running METRIC=$METRIC"
     echo "******************************************"
 
-    for A in proplus; do
+    for A in proplus1; do
         ADDNAME="$A"
         echo "------------------------------------------"
         echo "Running ADDNAME=$ADDNAME"

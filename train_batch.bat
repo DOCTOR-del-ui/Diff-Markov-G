@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set ADDNAME=proplus
+set ADDNAME=proplus1
 
 for %%I in (1) do (
     for %%W in (96) do (
