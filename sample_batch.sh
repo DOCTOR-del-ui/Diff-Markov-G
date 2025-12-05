@@ -15,7 +15,7 @@ for I in 1; do
                        --config_file ./Config/cmapss.yaml \
                        --gpu 0 \
                        --sample 0 \
-                       --milestone 500
+                       --milestone 1000
 
         echo "Finished run for idx=$I, window=$W"
         echo
