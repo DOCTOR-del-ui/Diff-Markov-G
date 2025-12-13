@@ -204,13 +204,13 @@ if __name__ == "__main__":
     elif addname == "markovplusm":  #马尔可夫特征提取（无自适应）缩放1
         config["solver"]["max_epochs"] = 15000
         config["model"]["params"]["loss_type"] = "l2"
-        config["model"]["params"]["resid_pdrop_markovaware"] = 1
+        config["model"]["params"]["resid_pdrop_markovaware"] = 1.0
         config["model"]["params"]["use_markovaware"] = True
     elif addname == "markovplusmz": #马尔可夫损失1+马尔可夫特征提取（无自适应）
         config["solver"]["max_epochs"] = 15000
         config["model"]["params"]["loss_type"] = "l2"
         config["model"]["params"]["use_markovloss"] = True
-        config["model"]["params"]["resid_pdrop_markovaware"] = 1
+        config["model"]["params"]["resid_pdrop_markovaware"] = 1.0
         config["model"]["params"]["use_markovaware"] = True
         
         
