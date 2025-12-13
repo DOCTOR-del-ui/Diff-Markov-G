@@ -55,13 +55,6 @@ if __name__ == "__main__":
         config["model"]["params"]["n_layer_enc"] = 4
         config["solver"]["max_epochs"] = 30000
         config["model"]["params"]["loss_type"] = "l2"
-    if addname == "proplus1":
-        config["model"]["params"]["d_model"] = 256
-        config["model"]["params"]["n_heads"] = 16
-        config["model"]["params"]["n_layer_dec"] = 8
-        config["model"]["params"]["n_layer_enc"] = 8
-        config["solver"]["max_epochs"] = 100000
-        config["model"]["params"]["loss_type"] = "l2"
     elif addname == "minil1norm":
         config["solver"]["max_epochs"] = 5000
         config["dataloader"]["train_dataset"]["params"]["neg_one_to_one"] = False
@@ -84,16 +77,16 @@ if __name__ == "__main__":
         config["solver"]["max_epochs"] = 10000
         config["model"]["params"]["loss_type"] = "l2"
         config["model"]["params"]["use_markovloss"] = True
-    elif addname == "markovplus":
+    elif addname == "markovplus":   #马尔可夫损失1
         config["solver"]["max_epochs"] = 15000
         config["model"]["params"]["loss_type"] = "l2"
         config["model"]["params"]["use_markovloss"] = True
-    elif addname == "markovplusx":
+    elif addname == "markovplusx":  
         config["solver"]["max_epochs"] = 15000
         config["model"]["params"]["loss_type"] = "l2"
         config["model"]["params"]["use_markovloss"] = True
         config["model"]["params"]["use_markovhead"] = True
-    elif addname == "markovplusz":
+    elif addname == "markovplusz":  #马尔可夫特征提取（无自适应）
         config["solver"]["max_epochs"] = 15000
         config["model"]["params"]["loss_type"] = "l2"
         config["model"]["params"]["resid_pdrop_markovaware"] = 1.5
@@ -104,7 +97,7 @@ if __name__ == "__main__":
         config["model"]["params"]["use_markovloss"] = True
         config["model"]["params"]["resid_pdrop_markovaware"] = 1.0
         config["model"]["params"]["use_markovaware"] = True
-    elif addname == "markovplusyz":
+    elif addname == "markovplusyz": #马尔可夫损失1+马尔可夫特征提取（无自适应）
         config["solver"]["max_epochs"] = 15000
         config["model"]["params"]["loss_type"] = "l2"
         config["model"]["params"]["use_markovloss"] = True
@@ -208,6 +201,17 @@ if __name__ == "__main__":
         config["model"]["params"]["n_layer_dec"] = 1
         config["model"]["params"]["n_layer_enc"] = 1
         config["solver"]["max_epochs"] = 5000
+    elif addname == "markovplusm":  #马尔可夫特征提取（无自适应）缩放1
+        config["solver"]["max_epochs"] = 15000
+        config["model"]["params"]["loss_type"] = "l2"
+        config["model"]["params"]["resid_pdrop_markovaware"] = 1
+        config["model"]["params"]["use_markovaware"] = True
+    elif addname == "markovplusmz": #马尔可夫损失1+马尔可夫特征提取（无自适应）
+        config["solver"]["max_epochs"] = 15000
+        config["model"]["params"]["loss_type"] = "l2"
+        config["model"]["params"]["use_markovloss"] = True
+        config["model"]["params"]["resid_pdrop_markovaware"] = 1
+        config["model"]["params"]["use_markovaware"] = True
         
         
     config["model"]["params"]["seq_length"] = window
