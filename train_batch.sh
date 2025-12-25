@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ADDNAME="markovplusmz"
+ADDNAME="markovplusm"
 
 for I in 1 2 3 4; do
     for W in 48 96; do
