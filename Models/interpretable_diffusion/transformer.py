@@ -27,10 +27,13 @@ class TrendBlock(nn.Module):
         self.poly_space = torch.stack([lin_space ** float(p + 1) for p in range(trend_poly)], dim=0)
 
     def forward(self, input):
+        #print("趋势块输入形状:", input.shape)
         b, c, h = input.shape
         x = self.trend(input).transpose(1, 2)
         
         trend_vals = torch.matmul(x.transpose(1, 2), self.poly_space.to(x.device))
+        #print("乘法左边形状:", x.transpose(1, 2).shape, "乘法右边形状:", self.poly_space.to(x.device).shape)
+        #print("趋势值形状:", trend_vals.shape)
         trend_vals = trend_vals.transpose(1, 2)
         return trend_vals
     

@@ -105,6 +105,8 @@ class MarkovAwareEmbedding(nn.Module):
         out = self.proj(feats)   # (B, L, d_model)
         
         #print(f"MarkovAwareEmbedding scale: {self.scale}")
+        
+        #print("MarkovAwareEmbedding scale:", self.scale.mean().item())
 
         return out * self.scale
 
@@ -160,6 +162,7 @@ class MarkovResidualBlock(nn.Module):
         out = self.proj(feats)   # (B, L, d_model)
         
         #print(f"MarkovResidualBlock scale: {self.scale}")
+        #print("MarkovResidualBlock scale:", self.scale.mean().item())
 
         return out * self.scale
 
