@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ADDNAME="markovplusm"
+ADDNAME="markovplusmz"
 
-for I in 1 2 3 4; do
-    for W in 48 96; do
+for I in 1; do
+    for W in 48; do
         echo "=========================================="
         echo "Running configuration: idx=$I, window=$W"
         echo "=========================================="
